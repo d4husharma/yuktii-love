@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For You ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffd6e8, #e0c3fc);
+      color: #333;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      color: #ff4d88;
+    }
+    p {
+      max-width: 700px;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .btn {
+      background: #ff4d88;
+      color: white;
+      border: none;
+      padding: 14px 30px;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .btn:hover {
+      transform: scale(1.05);
+      background: #ff2f70;
+    }
+    .photo {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 20px 0;
+      border: 6px solid #ff4d88;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .card {
+      background: rgba(255,255,255,0.8);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      margin: 15px 0;
+      max-width: 700px;
+    }
+    .promise {
+      text-align: left;
+      font-size: 1.05rem;
+    }
+    .promise span {
+      display: block;
+      margin: 10px 0;
+    }
+    .heart {
+      position: fixed;
+      color: #ff4d88;
+      font-size: 20px;
+      animation: float 6s linear infinite;
+      opacity: 0.7;
+    }
+    @keyframes float {
+      0% { transform: translateY(100vh) scale(0.5); }
+      100% { transform: translateY(-10vh) scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <section id="home">
+    <h1>Hellllooooo Yuktiii my loveeeee ❤️</h1>
+    <img src="yukti.jpg" alt="Yukti" class="photo" />
+    <p>
+      I know I messed up… and I know sorry is just a word.
+      But this little space on the internet is me trying —
+      trying to make you smile, even a little...I love you with my all heart.I will always try my best to make your mood better.
+    </p>
+    <button class="btn" onclick="scrollToSection('sorry')">Come here 🫶</button>
+  </section>
+
+  <section id="sorry">
+    <h1>I’m Sorry 🥺</h1>
+    <div class="card">
+      <p>
+        I never wanted to hurt you. Not even by accident.
+        Your smile means more to me than my ego,
+        and your silence scares me more than your anger.
+        I will always choose you . ANYTIME 
+        YOU ARE THE MOST PRECIOUS PERSON TO ME..MORE IMPORTANT THAN A DIAMOND OR ANY RARE ELEMENTS.
+      </p>
+      <p>
+        I’m learning… for you. Will do my best to make everything right for us and for our future
+      </p>
+    </div>
+    <button class="btn" onclick="scrollToSection('promise')">One promise?</button>
+  </section>
+
+  <section id="promise">
+    <h1>My Promises 🤍</h1>
+    <div class="card promise">
+      <span>☑ I’ll listen more</span>
+      <span>☑ I’ll fix my flaws</span>
+      <span>☑ I’ll make you smile even in your worst days</span>
+      <span>☑ I’ll choose you over arguments</span>
+      <span>☑ I’ll never stop trying for us</span>
+    </div>
+    <button class="btn" onclick="scrollToSection('final')">Just one last thing</button>
+  </section>
+
+  <section id="final">
+    <h1>Still Angry? 😌</h1>
+    <p>
+      That’s okay… take your time.
+      But if this made you smile even a little —
+      then my effort worked.
+      I LOVE YOUU WITH MY ALL HEART 
+      Dr. Yukti Sharma ( MY FUTURE WIFEEE)
+    </p>
+    <button class="btn" onclick="showLove()">Click me 💕</button>
+    <p id="loveText" style="display:none; margin-top:20px; font-size:1.3rem; color:#ff2f70;">
+      I choose you. Always. ❤️
+    </p>
+  </section>
+
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function showLove() {
+      document.getElementById('loveText').style.display = 'block';
+      for (let i = 0; i < 20; i++) createHeart();
+    }
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerHTML = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = (15 + Math.random() * 20) + 'px';
+      heart.style.animationDuration = (4 + Math.random() * 4) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+  </script>
+
+</body>
+</html>
