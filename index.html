@@ -90,18 +90,9 @@
   </style>
 </head>
 <body>
-<button class="btn" onclick="playMusic()">🎵 Play Music</button>
-
-<script>
-  const music = document.getElementById('bgMusic');
-
-  function playMusic() {
-    music.play();
-  }
-</script>
 
   <!-- Background Music -->
-  <audio id="bgMusic" autoplay loop>
+  <audio id="bgMusic" loop>
     <source src="bargad.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
@@ -109,6 +100,10 @@
   <section id="home">
     <h1>Hellllooooo Yuktiii my loveeeee ❤️</h1>
     <img src="yukti.jpg" alt="Yukti" class="photo" />
+    
+    <!-- Play Music Button -->
+    <button class="btn" onclick="playMusic()">🎵 Play Music</button>
+    
     <p>
       I know I messed up… and I know sorry is just a word.
       But this little space on the internet is me trying — 
@@ -161,8 +156,14 @@
   </section>
 
   <script>
+    const music = document.getElementById('bgMusic');
+
     function scrollToSection(id) {
       document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function playMusic() {
+      music.play();
     }
 
     function showLove() {
@@ -181,9 +182,8 @@
       setTimeout(() => heart.remove(), 6000);
     }
 
-    // Try autoplay on mobile after first click (optional)
+    // Optional: start music on any first click (mobile friendly)
     window.addEventListener('click', () => {
-      const music = document.getElementById('bgMusic');
       if (music.paused) music.play();
     });
   </script>
