@@ -90,6 +90,15 @@
   </style>
 </head>
 <body>
+<button class="btn" onclick="playMusic()">🎵 Play Music</button>
+
+<script>
+  const music = document.getElementById('bgMusic');
+
+  function playMusic() {
+    music.play();
+  }
+</script>
 
   <!-- Background Music -->
   <audio id="bgMusic" autoplay loop>
