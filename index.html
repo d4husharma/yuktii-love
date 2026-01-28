@@ -45,6 +45,7 @@
       cursor: pointer;
       transition: all 0.3s ease;
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      margin-top: 10px;
     }
     .btn:hover {
       transform: scale(1.05);
@@ -59,7 +60,6 @@
       border: 6px solid #ff4d88;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
-
     .card {
       background: rgba(255,255,255,0.8);
       padding: 30px;
@@ -91,13 +91,19 @@
 </head>
 <body>
 
+  <!-- Background Music -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="bargad.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
   <section id="home">
     <h1>Hellllooooo Yuktiii my loveeeee ❤️</h1>
     <img src="yukti.jpg" alt="Yukti" class="photo" />
     <p>
       I know I messed up… and I know sorry is just a word.
-      But this little space on the internet is me trying —
-      trying to make you smile, even a little...I love you with my all heart.I will always try my best to make your mood better.
+      But this little space on the internet is me trying — 
+      trying to make you smile, even a little...I love you with my all heart. I will always try my best to make your mood better.
     </p>
     <button class="btn" onclick="scrollToSection('sorry')">Come here 🫶</button>
   </section>
@@ -109,8 +115,7 @@
         I never wanted to hurt you. Not even by accident.
         Your smile means more to me than my ego,
         and your silence scares me more than your anger.
-        I will always choose you . ANYTIME 
-        YOU ARE THE MOST PRECIOUS PERSON TO ME..MORE IMPORTANT THAN A DIAMOND OR ANY RARE ELEMENTS.
+        I will always choose you. ANYTIME YOU ARE THE MOST PRECIOUS PERSON TO ME.. MORE IMPORTANT THAN A DIAMOND OR ANY RARE ELEMENTS.
       </p>
       <p>
         I’m learning… for you. Will do my best to make everything right for us and for our future
@@ -135,7 +140,7 @@
     <h1>Still Angry? 😌</h1>
     <p>
       That’s okay… take your time.
-      But if this made you smile even a little —
+      But if this made you smile even a little — 
       then my effort worked.
       I LOVE YOUU WITH MY ALL HEART 
       Dr. Yukti Sharma ( MY FUTURE WIFEEE)
@@ -166,6 +171,12 @@
       document.body.appendChild(heart);
       setTimeout(() => heart.remove(), 6000);
     }
+
+    // Try autoplay on mobile after first click (optional)
+    window.addEventListener('click', () => {
+      const music = document.getElementById('bgMusic');
+      if (music.paused) music.play();
+    });
   </script>
 
 </body>
